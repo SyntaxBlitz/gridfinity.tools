@@ -8,12 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="main.css" />
-    <script src="main.js"></script>
   </head>
 
   <body>
@@ -48,12 +47,27 @@
       <section id="resources">
         <h2>Resources</h2>
 
-        <div class="card">
-          <p>
+        <div
+          class="card"
+          style="
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+          "
+        >
+          <p style="flex: 3">
             <a href="https://www.youtube.com/watch?v=ra_9zU-mnl8">
               Zack Freedman's video</a
             >, introducing Gridfinity
           </p>
+          <div style="flex: 1; display: flex">
+            <img
+              src="https://i.ytimg.com/vi/ra_9zU-mnl8/maxresdefault.jpg"
+              alt="YouTube thumbnail for Zack's video, showing many multicolored Gridfinity bins."
+              style="border-radius: 6px; max-width: 100%"
+            />
+          </div>
         </div>
         <div class="card">
           <p>
@@ -188,7 +202,7 @@
           <!-- https://github.com/vector76/gridfinity_openscad -->
           <p>
             <a href="https://github.com/vector76/gridfinity_openscad">
-              gridfinity_openscad </a
+              gridfinity_openscad</a
             >, a Gridfinity implementation by Jamie for
             <strong>bins</strong> and <strong>baseplates</strong>.
           </p>
@@ -217,8 +231,25 @@
             <a
               href="https://www.printables.com/model/452675-gridfinity-clickfinity-baseplate-no-magnets-univer"
               >Clickfinity baseplates</a
-            >, but I thought you should know about them anyway.
+            >, but I thought you should know about them anyway. These are
+            originally by
+            <a href="https://www.printables.com/@jerrymk_985120">jerrymk</a>.
           </p>
+
+          <div
+            style="display: flex; flex-direction: column; align-items: center"
+          >
+            <img
+              src="images/clickfinity_corn_guy.webp"
+              alt=""
+              style="max-width: 40%; border-radius: 6px"
+            />
+            <figcaption>
+              A print from
+              <a href="https://www.printables.com/@CornGuy_2275609">Corn Guy</a>
+              on Printables
+            </figcaption>
+          </div>
 
           <p>
             These are baseplates that, rather than holding modules in place
@@ -233,6 +264,19 @@
             download the <span class="proprietary">Fusion 3D</span> file if you
             want to create further baseplate sizes, but this requires that you
             install proprietary (non-open-source) software.
+          </p>
+          <p>
+            There's also a
+            <a
+              href="https://www.printables.com/model/506105-clickfinity-refined-baseplates-for-use-with-gridfi/files"
+              >rebuild by FPVSmitty</a
+            >
+            that comes with STEP files.
+          </p>
+
+          <p>
+            None of the Clickfinity plates seem to be available under
+            open-source licenses.
           </p>
         </div>
       </section>
@@ -266,14 +310,13 @@
           There's no one standard for magnet polarity, unfortunately, but the
           lightweight consensus seems to be that the magnet's
           <strong>north pole faces upwards</strong>; this is the standard I've
-          settled on, and it's what I would recommend in general. This means
-          that if you're looking downwards at a baseplate, you should be seeing
-          the north poles of the magnets, and if you're looking directly at the
-          bottom of a bin, you should see its magnets' <em>south</em> poles, so
-          that when you place the bin upright, its north poles are facing the
-          ceiling. This explanation might seem overly pedantic, but you'll
-          understand my meticulousness after you've messed up your first few
-          bins :)
+          settled on. This means that if you're looking downwards at a
+          baseplate, you should be seeing the north poles of the magnets, and if
+          you're looking directly at the bottom of a bin, you should see its
+          magnets' <em>south</em> poles, so that when you place the bin upright,
+          its north poles are facing the ceiling. This explanation might seem
+          overly pedantic, but you'll understand my meticulousness after you've
+          messed up your first few bins :)
         </p>
 
         <p>
@@ -281,7 +324,7 @@
           baseplate, especially if you're using the “thin” type of baseplate
           (which will have the bottom of the bin right up against the underside
           of the baseplate). This will also solve polarity issues, but you
-          should follow a standard anyway!
+          should follow a polarity standard anyway!
         </p>
 
         <p>
@@ -313,6 +356,10 @@
             depending on who designed the module. Not all bins are designed for
             a press fit; some designs for bin bases, for example, have you slide
             magnets in from the side, with or without glue to hold them in.
+          </li>
+          <li>
+            Similarly, some tools will default to e.g. 6.5mm diameter magnet
+            holes, presumably to keep them easier to insert.
           </li>
           <li>
             If you print magnet holes with support material, you need to clean
@@ -352,37 +399,47 @@
             href="https://amzn.to/3C4Id72"
             >here's an affiliate link</a
           >
-          to the Amazon magnets I most recently bought). I've been spending
-          about USD $0.04 per magnet, including shipping. Is it worth the money,
-          to add four of these to every 1x1 bin and four more to the baseplate?
-          I dunno, but I do it anyway, because magnets are cool.
+          to the Amazon magnets I most recently bought; they're fine, though I
+          haven't measured them for precision). I've been spending about USD
+          $0.04 per magnet, including shipping. Is it worth the money, to add
+          four of these to every 1x1 bin and four more to the baseplate? I
+          dunno, but I do it anyway, because magnets are cool.
         </p>
 
         <h3>Gridfinity Remag</h3>
 
-        <div class="card">
-          <p>
-            Once you have a magnet strategy you're happy with — whether you're
-            gluing them, press-fitting them, capturing them, or just omitting
-            them altogether — you'll want all of your printed modules to use the
-            same strategy. That way, you can dial in your settings for your
-            particular printer, filament, and magnets, and stop worrying about
-            the details.
-          </p>
+        <p>
+          Once you have a magnet strategy you're happy with — whether you're
+          gluing them, press-fitting them, capturing them, or just omitting them
+          altogether — you'll want all of your printed modules to use the same
+          strategy. That way, you can dial in your settings for your particular
+          printer, filament, and magnets, and stop worrying about the details.
+        </p>
 
-          <p>
-            Unfortunately, every module designer seems to have their own opinion
-            on what magnet strategy to use. If you're frequently using others'
-            modules, or just using a generator that doesn't support your
-            favorite technique, you'll want to modify each base on the STL files
-            you download.
-          </p>
+        <p>
+          Unfortunately, every module designer seems to have their own opinion
+          on what magnet strategy to use. If you're frequently using others'
+          modules, or just using a generator that doesn't support your favorite
+          technique, you'll want to modify each base on the STL files you
+          download.
+        </p>
+        <div class="card">
           <p>
             <a href="https://gridfinity.tools/remag">Gridfinity Remag</a> is a
             tool I built that handles this automatically. You import an STL file
             you want to print, then import an STL file with the kind of base you
             like, and Remag will find every base in the first file, cut it out,
             and replace it with your preferred “gold standard” base.
+          </p>
+          <p>
+            This is free, open-source software (<span class="copyleft"
+              >GPL licensed</span
+            >). It uses the
+            <a href="https://github.com/openscad/openscad-wasm"
+              >web build of OpenSCAD</a
+            >
+            to perform CAD operations in your browser (no files leave your
+            machine).
           </p>
         </div>
 
@@ -412,51 +469,86 @@
           </li>
         </ul>
 
-        <div class="card">
-          <p>
-            My favorite magnet jig is this
-            <a
-              href="https://www.printables.com/model/842860-gridfinity-magnet-installation-alignment-jig?lang=en"
-              >plunger-style jig</a
-            >
-            by ichisaur. Magnets line up quite nicely on the plunger, and then
-            you push the plunger away from the reference magnets before removing
-            the device, so that the magnets don't stay stuck to the jig.
-          </p>
-          <p>
-            It's got these little feet around the edge that grip the bin base,
-            which are kind of satisfying to use, but they do sometimes cause a
-            “click” as you're inserting or removing the jig, which can create
-            undesirable vibrations; the feet also make it hard for the jig to
-            fit in a 1x1 Gridfinity square.
-          </p>
-          <p>
-            Personally, I have the jig reference magnet set “backwards”, since I
-            insert magnets during the print from the top side of the bin, rather
-            than coming at the bin from the bottom after it's printed. This jig
-            works fine for that.
-          </p>
+        <div
+          class="card"
+          style="
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+          "
+        >
+          <div style="flex: 1; display: flex">
+            <img
+              src="images/plunger_ichisaur.webp"
+              alt="A plunger-style magnet jig, with four reference magnets attached, and four magnets ready to be inserted into a bin."
+              style="max-width: 100%; border-radius: 6px"
+            />
+          </div>
+          <div style="flex: 3" class="subcard">
+            <p>
+              My favorite magnet jig is this
+              <a
+                href="https://www.printables.com/model/842860-gridfinity-magnet-installation-alignment-jig?lang=en"
+                >plunger-style jig</a
+              >
+              by ichisaur. Magnets line up quite nicely on the plunger, and then
+              you push the plunger away from the reference magnets before
+              removing the device, so that the magnets don't stay stuck to the
+              jig.
+            </p>
+            <p>
+              It's got these little feet around the edge that grip the bin base,
+              which are kind of satisfying to use, but they do sometimes cause a
+              “click” as you're inserting or removing the jig, which can create
+              undesirable vibrations; the feet also make it hard for the jig to
+              fit in a 1x1 Gridfinity square.
+            </p>
+            <p>
+              Personally, I have the jig reference magnet set “backwards”, since
+              I insert magnets during the print from the top side of the bin,
+              rather than coming at the bin from the bottom after it's printed.
+              This jig works fine for that.
+            </p>
+          </div>
         </div>
 
-        <div class="card">
-          <p>
-            I've also used
-            <a
-              href="https://www.printables.com/model/595230-gridfinity-friction-fit-magnet-jig-palm-handle-rem?lang=en"
-              >this</a
-            >
-            alignment tool by <a href="https://25.wf/">pyrho</a>, as a simple
-            polarity checker.
-          </p>
-          <p>
-            Unfortunately, it does have the word “Bin” or “Base” debossed (to be
-            used depending on the polarity), which is bad for someone like me
-            who is incapable of getting the darn polarity right on the first
-            try. I had to drill a hole into the opposite side of the magnet
-            press-fit so I could push it out and try again. Consider just
-            writing on the print which side it's for <em>after</em> inserting
-            the magnet.
-          </p>
+        <div
+          class="card"
+          style="
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            align-items: center;
+          "
+        >
+          <div style="flex: 3" class="subcard">
+            <p>
+              I've also used
+              <a
+                href="https://www.printables.com/model/595230-gridfinity-friction-fit-magnet-jig-palm-handle-rem?lang=en"
+                >this</a
+              >
+              alignment tool by <a href="https://25.wf/">pyrho</a>, as a simple
+              polarity checker.
+            </p>
+            <p>
+              Unfortunately, it does have the word “Bin” or “Base” debossed (to
+              be used depending on the polarity), which is bad for someone like
+              me who is incapable of getting the darn polarity right on the
+              first try. I had to drill a hole into the opposite side of the
+              magnet press-fit so I could push it out and try again. Consider
+              just writing on the print which side it's for
+              <em>after</em> inserting the magnet.
+            </p>
+          </div>
+          <div style="flex: 1">
+            <img
+              src="images/magtool_pyrho.webp"
+              alt="A simple magnet jig with a palm handle inscribed with the word 'BASE'."
+              style="max-width: 100%; border-radius: 6px"
+            />
+          </div>
         </div>
 
         <div class="card">
@@ -492,6 +584,11 @@
             <a href="https://makerworld.com/en/models/893484">This ruler</a> by
             loftshed (Pete) will do the trick.
           </p>
+          <img
+            src="images/ruler_loftshed.webp"
+            alt="A ruler, but with markings for Gridfinity units (as well as half-units on one side and sixths on the other). Five units long."
+            style="max-width: 80%; align-self: center; border-radius: 6px"
+          />
         </div>
 
         <div class="card">
