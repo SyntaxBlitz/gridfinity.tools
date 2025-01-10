@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>gridfinity.tools</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li style="margin-bottom: 8px"><strong>gridfinity.tools</strong></li>
+        <li>
+          <a href="#resources">Resources</a>
+        </li>
+        <li>
+          <a href="#generators">Generators</a>
+        </li>
+        <li>
+          <a href="#magnets">Magnets</a>
+        </li>
+        <li>
+          <a href="#rulers">Rulers</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>gridfinity.tools</h1>
+
+      <p>
+        a collection of tools that seem useful for Gridfinity users and
+        designers. Maintained by
+        <a href="https://timothyaveni.com">Timothy J. Aveni</a>. Contribute on
+        <a href="https://github.com/SyntaxBlitz/gridfinity.tools">GitHub</a>.
+      </p>
+
+      <section id="resources">
+        <h2>Resources</h2>
+
+        <div class="card">
+          <p>
+            <a href="https://www.youtube.com/watch?v=ra_9zU-mnl8">
+              Zack Freedman's video</a
+            >, introducing Gridfinity
+          </p>
+        </div>
+        <div class="card">
+          <p>
+            The
+            <a href="https://www.reddit.com/r/Gridfinity/"
+              >/r/gridfinity subreddit</a
+            >, a community for discussing Gridfinity
+          </p>
+        </div>
+
+        <div class="card">
+          <p>
+            <a href="https://gridfinity.xyz/">gridfinity.xyz</a>, a
+            community-run website with some details about Gridfinity
+          </p>
+        </div>
+        <div class="card">
+          <p>
+            <a href="https://gridfinity.wiki/">gridfinity.wiki</a>, a website
+            run by community member Tim Krause
+          </p>
+        </div>
+      </section>
+
+      <section id="generators">
+        <h2>Generators</h2>
+
+        <p>
+          To use Gridfinity, you'll need baseplates and then stuff to put on the
+          baseplates. These come in standard sizes so that all Gridfinity
+          modules are compatible with each other.
+        </p>
+        <p>
+          Many modules are custom-designed to hold
+          <a
+            href="https://www.printables.com/model/526946-gridfinity-caliper-holder"
+            >particular objects</a
+          >, but you can also download and print generic <em>bins</em> to store
+          piles of objects like screws.
+        </p>
+        <p>
+          You can find downloadable baseplates or bins in various sizes, but
+          using a <em>generator</em> lets you specify exactly the size you need
+          for a particular situation and customize additional parameters (like
+          the number of subdivisions in a bin).
+        </p>
+        <p>
+          Bin generators are handy even if you want to design your own custom
+          modules; you can use a generator to create a solid bin, then use CAD
+          software to make cutouts that hold your objects.
+        </p>
+
+        <h3>Web-based</h3>
+
+        <div class="card">
+          <p>
+            <a href="">Web OpenSCAD Customizer</a>, a web-based OpenSCAD
+            customizer for <strong>bins</strong> by Jamie. Powered by
+            gridfinity_openscad.
+          </p>
+          <p>
+            Open-source, <span class="copyleft">GPL licensed</span> code. See
+            <a href="https://vector76.github.io/Web_OpenSCAD_Customizer/"
+              >GitHub</a
+            >.
+          </p>
+          <p>
+            This uses OpenSCAD within the browser, so all the bin generation
+            happens on your computer without needing to install OpenSCAD. Since
+            there's no server, generating models, it tends to be reliable.
+          </p>
+        </div>
+
+        <div class="card">
+          <p>
+            A <strong>bin</strong> and <strong>baseplate</strong> generator from
+            <a href="https://gridfinity.perplexinglabs.com/">Perplexing Labs</a
+            >. Powered by a number of backends, including
+            gridfinity-rebuilt-openscad and gridfinity_extended_openscad.
+          </p>
+          <p>
+            <span class="proprietary">Proprietary software</span>: not
+            open-source. Still quite handy!
+          </p>
+
+          <p>
+            Note that (as of August 2024) the backing server occasionally hangs,
+            and retrying typically doesn't work for the same grid dimensions;
+            you'll need to change some parameters or look elsewhere.
+          </p>
+        </div>
+
+        <h3>OpenSCAD</h3>
+
+        <span>
+          <a href="https://openscad.org/">OpenSCAD</a> is a free,
+          <span class="copyleft">open-source</span> downloadable CAD program
+          that uses code to define models. Below are code packages that can be
+          used to generate any Gridfinity bin or base, with various
+          customizations (e.g. the number of subdivisions in the bin).
+        </span>
+
+        <div
+          class="card"
+          style="
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+          "
+        >
+          <div style="flex: 3">
+            <p>
+              <a href="https://github.com/kennetek/gridfinity-rebuilt-openscad"
+                >gridfinity-rebuilt-openscad</a
+              >, my preferred implementation of <strong>bins</strong> and
+              <strong>baseplates</strong>.
+            </p>
+            <p>
+              Open-source, <span class="permissive">MIT licensed</span> code.
+            </p>
+          </div>
+          <div style="flex: 1">
+            <img style="max-width: 100%; border-radius: 6px;""
+            src="https://github.com/kennetek/gridfinity-rebuilt-openscad/raw/main/images/custom_dimension.gif"
+            alt="An animation demonstrating a number of custom bin options in
+            gridfinity-rebuilt-openscad." />
+          </div>
+        </div>
+
+        <div class="card">
+          <!-- https://github.com/vector76/gridfinity_openscad -->
+          <p>
+            <a href="https://github.com/vector76/gridfinity_openscad">
+              gridfinity_openscad </a
+            >, a Gridfinity implementation by Jamie for
+            <strong>bins</strong> and <strong>baseplates</strong>.
+          </p>
+          <p>Open-source, <span class="permissive">MIT licensed</span> code.</p>
+        </div>
+
+        <div class="card">
+          <!-- https://github.com/ostat/gridfinity_extended_openscad -->
+          <p>
+            <a href="https://github.com/ostat/gridfinity_extended_openscad">
+              gridfinity_extended_openscad</a
+            >, a Gridfinity implementation by Chris Heazlewood for
+            <strong>bins</strong> and <strong>baseplates</strong>.
+          </p>
+          <p>
+            Open-source, <span class="copyleft">GPL licensed</span> code (was
+            MIT until 2024-12-26).
+          </p>
+        </div>
+
+        <h3>Other</h3>
+
+        <div class="card">
+          <p>
+            I haven't found a generator for
+            <a
+              href="https://www.printables.com/model/452675-gridfinity-clickfinity-baseplate-no-magnets-univer"
+              >Clickfinity baseplates</a
+            >, but I thought you should know about them anyway.
+          </p>
+
+          <p>
+            These are baseplates that, rather than holding modules in place
+            using magnets, have tensioned “clicky” arms that are compatible with
+            standard bins. I've never tried them, since I mostly print in PLA,
+            which doesn't like to be held under constant tension like this.
+          </p>
+
+          <p>
+            Although there's no generator, there are some premade STL files for
+            baseplates of all rectangular sizes between 1x1 and 7x7. You can
+            download the <span class="proprietary">Fusion 3D</span> file if you
+            want to create further baseplate sizes, but this requires that you
+            install proprietary (non-open-source) software.
+          </p>
+        </div>
+      </section>
+
+      <section id="magnets">
+        <h2>Magnets</h2>
+
+        <p>
+          If you affix magnets to your baseplates and to your bins (or other
+          Gridfinity modules), you get some extra grip. The idea is that
+          <em>every</em> base on a bin will have four magnets on the corners
+          (e.g. a 3x2 bin, containing 6 gridfinity bases, contains 24 magnets),
+          and every cell in a baseplate has a matching four magnets.
+        </p>
+
+        <p>
+          Magnets are handy for baseplates in drawers or toolboxes, where the
+          movement could cause bins to slip, though you might find that your
+          bins aren't at much risk of slipping anyway.
+        </p>
+
+        <p>
+          Naturally, to keep things interchangeable, you want to make sure all
+          of your magnets are facing the same direction, for all of your bins
+          and baseplates. If you have a buddy who's also into Gridfinity, make
+          sure the two of you are using the same standard so you can trade
+          modules!
+        </p>
+
+        <p>
+          There's no one standard for magnet polarity, unfortunately, but the
+          lightweight consensus seems to be that the magnet's
+          <strong>north pole faces upwards</strong>; this is the standard I've
+          settled on, and it's what I would recommend in general. This means
+          that if you're looking downwards at a baseplate, you should be seeing
+          the north poles of the magnets, and if you're looking directly at the
+          bottom of a bin, you should see its magnets' <em>south</em> poles, so
+          that when you place the bin upright, its north poles are facing the
+          ceiling. This explanation might seem overly pedantic, but you'll
+          understand my meticulousness after you've messed up your first few
+          bins :)
+        </p>
+
+        <p>
+          One strategy to save on magnets is to use a steel plate under your
+          baseplate, especially if you're using the “thin” type of baseplate
+          (which will have the bottom of the bin right up against the underside
+          of the baseplate). This will also solve polarity issues, but you
+          should follow a standard anyway!
+        </p>
+
+        <p>
+          I've found that, with magnets, most modules can stay in place even
+          when the baseplate is held upside down; the stuff <em>inside</em> the
+          bins, on the other hand, will fall on the floor.
+        </p>
+
+        <p>
+          The Gridfinity standard magnet size is 6mm in diameter and 2mm thick —
+          or, at least, that's the general vibe of the specification. There are
+          a few things complicating this:
+        </p>
+
+        <ul>
+          <li>
+            Magnets sometimes run big or small (I think slightly small is the
+            trend). This means that models designed for a “press fit” (where you
+            just push the magnet into a round hole at the bottom of a bin and
+            hope it stays there) might not actually hold magnets in very well.
+          </li>
+          <li>
+            3D printers will sometimes print holes big or small, depending on
+            things like your slicer settings and the filament properties.
+          </li>
+          <li>
+            Although the <em>placement</em> of magnets is more or less
+            standardized, the means by which they're held in place varies
+            depending on who designed the module. Not all bins are designed for
+            a press fit; some designs for bin bases, for example, have you slide
+            magnets in from the side, with or without glue to hold them in.
+          </li>
+          <li>
+            If you print magnet holes with support material, you need to clean
+            that material out really well to get magnets to fit.
+          </li>
+        </ul>
+
+        <p>
+          Some people use a soldering iron to heat-insert magnets into holes
+          that are a little undersized. This works (though it seems a little
+          annoying to do), but magnets can lose their magnetism with heat
+          applied. Does this end up mattering? I'm not sure, but enough people
+          caution against it that I haven't bothered trying.
+        </p>
+
+        <p>
+          For a while, I tried hot-gluing magnets into bins, but they don't last
+          long like that (remember, any adhesive solution needs to be stronger
+          than the magnets themselves!). What I've settled on recently is
+          <strong>capturing the magnets</strong>
+          <em>within</em> the 3D print on a bin, putting a layer or two down,
+          printing a hole, pausing the print after the appropriate layer,
+          dropping the magnet in, and then continuing the print, bridging more
+          plastic on top of the hole (<em>without</em>
+          a ferrous nozzle, of course!). The downside of this approach is that
+          the magnets will be weaker with a couple layers of plastic holding
+          them away from the baseplate, but at least they're consistent; I've
+          had glued magnets that were inset too much or (worse) that poked out a
+          bit, which doesn't happen here. I've also heard people complain of
+          rattling magnets with this approach (since you don't want to make the
+          holes too short, or you'll crash your 3D printer head into the
+          magnets), but I've only rarely had that happen.
+        </p>
+
+        <p>
+          You can typically buy magnets on Amazon or Aliexpress (<a
+            href="https://amzn.to/3C4Id72"
+            >here's an affiliate link</a
+          >
+          to the Amazon magnets I most recently bought). I've been spending
+          about USD $0.04 per magnet, including shipping. Is it worth the money,
+          to add four of these to every 1x1 bin and four more to the baseplate?
+          I dunno, but I do it anyway, because magnets are cool.
+        </p>
+
+        <h3>Gridfinity Remag</h3>
+
+        <div class="card">
+          <p>
+            Once you have a magnet strategy you're happy with — whether you're
+            gluing them, press-fitting them, capturing them, or just omitting
+            them altogether — you'll want all of your printed modules to use the
+            same strategy. That way, you can dial in your settings for your
+            particular printer, filament, and magnets, and stop worrying about
+            the details.
+          </p>
+
+          <p>
+            Unfortunately, every module designer seems to have their own opinion
+            on what magnet strategy to use. If you're frequently using others'
+            modules, or just using a generator that doesn't support your
+            favorite technique, you'll want to modify each base on the STL files
+            you download.
+          </p>
+          <p>
+            <a href="https://gridfinity.tools/remag">Gridfinity Remag</a> is a
+            tool I built that handles this automatically. You import an STL file
+            you want to print, then import an STL file with the kind of base you
+            like, and Remag will find every base in the first file, cut it out,
+            and replace it with your preferred “gold standard” base.
+          </p>
+        </div>
+
+        <h3>Magnet jigs</h3>
+
+        <p>
+          Magnet jigs are (3D printable) tools that help you insert magnets into
+          bins and baseplates. They typically serve two purposes:
+        </p>
+        <ul>
+          <li>
+            Help you get the polarity right every time. After printing a jig,
+            you glue or otherwise insert a permanent “reference” magnet into the
+            jig, then place future magnets on the jig, aligning to the reference
+            magnet, in some way that helps you insert them where they need to
+            be. You need to be pretty clever to consistently insert the
+            reference magnet correctly; I've come to realize that I'm simply not
+            smart enough to do this right more than 50% of the time, so I just
+            slap together a jig and hope it's right (and disassemble or toss it
+            if not).
+          </li>
+          <li>
+            Help you hold the magnet as you insert it, so that you don't
+            fat-finger and flip the magnet while trying to insert it. Dropping a
+            magnet normally gets it stuck on some other magnet, which is always
+            a pain.
+          </li>
+        </ul>
+
+        <div class="card">
+          <p>
+            My favorite magnet jig is this
+            <a
+              href="https://www.printables.com/model/842860-gridfinity-magnet-installation-alignment-jig?lang=en"
+              >plunger-style jig</a
+            >
+            by ichisaur. Magnets line up quite nicely on the plunger, and then
+            you push the plunger away from the reference magnets before removing
+            the device, so that the magnets don't stay stuck to the jig.
+          </p>
+          <p>
+            It's got these little feet around the edge that grip the bin base,
+            which are kind of satisfying to use, but they do sometimes cause a
+            “click” as you're inserting or removing the jig, which can create
+            undesirable vibrations; the feet also make it hard for the jig to
+            fit in a 1x1 Gridfinity square.
+          </p>
+          <p>
+            Personally, I have the jig reference magnet set “backwards”, since I
+            insert magnets during the print from the top side of the bin, rather
+            than coming at the bin from the bottom after it's printed. This jig
+            works fine for that.
+          </p>
+        </div>
+
+        <div class="card">
+          <p>
+            I've also used
+            <a
+              href="https://www.printables.com/model/595230-gridfinity-friction-fit-magnet-jig-palm-handle-rem?lang=en"
+              >this</a
+            >
+            alignment tool by <a href="https://25.wf/">pyrho</a>, as a simple
+            polarity checker.
+          </p>
+          <p>
+            Unfortunately, it does have the word “Bin” or “Base” debossed (to be
+            used depending on the polarity), which is bad for someone like me
+            who is incapable of getting the darn polarity right on the first
+            try. I had to drill a hole into the opposite side of the magnet
+            press-fit so I could push it out and try again. Consider just
+            writing on the print which side it's for <em>after</em> inserting
+            the magnet.
+          </p>
+        </div>
+
+        <div class="card">
+          <p>
+            This isn't a jig, but it's related to getting polarities right: your
+            cell phone's compass can function as a magnet pole detector. Look
+            for an app that can tell you which pole of a magnet you're pointing
+            your phone at, then keep <em>very</em> careful track of which pole
+            is which. It helps to mark one side with a permanent marker (I tend
+            to mark the north side), though try not to rub the mark off..!
+          </p>
+        </div>
+      </section>
+
+      <section id="rulers">
+        <h2>Rulers</h2>
+
+        <p>
+          You can print Gridfinity rulers to measure things in Gridfinity units.
+          Useful, I guess, if you're trying to make a holder for a custom object
+          and you want to get a quick sense of how big it needs to be, or if you
+          want to know how big of a baseplate you can fit in a drawer.
+        </p>
+
+        <p>
+          Personally, I just use an actual baseplate when I'm eyeballing, or a
+          caliper or measuring tape when I'm being precise. Still, it's a
+          Gridfinity tool, so I thought I'd link it.
+        </p>
+
+        <div class="card">
+          <p>
+            <a href="https://makerworld.com/en/models/893484">This ruler</a> by
+            loftshed (Pete) will do the trick.
+          </p>
+        </div>
+
+        <div class="card">
+          <p>
+            If you're going to be making custom modules to fit objects in your
+            life, you'll need a caliper. This is the Vernier caliper I bought
+            off Amazon, and it works fine (I upgraded after breaking a crappy
+            digital caliper a few times).
+          </p>
+
+          <p>
+            <a href="https://amzn.to/40thfiT">Affiliate link</a> to the caliper,
+            because why would I link to Amazon and <em>not</em> take a cut?
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

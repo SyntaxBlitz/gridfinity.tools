@@ -1,0 +1,95 @@
+body {
+  font-family: "Blinker", sans-serif;
+  font-size: 14pt;
+  line-height: 1.5;
+}
+
+strong {
+  font-weight: 600;
+}
+
+nav {
+  position: fixed;
+  left: -100%;
+
+  transition: left 0.3s;
+
+  background-color: #f5f5f5;
+  padding: 12px;
+  width: 200px;
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  & ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  nav {
+    left: 30px;
+    top: 30px;
+  }
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+main {
+  max-width: 720px;
+  padding: 12px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  & p:first-child {
+    margin-top: 0;
+  }
+
+  & p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.proprietary {
+  color: #b71c1c;
+}
+
+.permissive {
+  color: #4a148c;
+}
+
+.copyleft {
+  color: #004d40;
+}
+
+a,
+a:visited {
+  color: #1565c0;
+}
